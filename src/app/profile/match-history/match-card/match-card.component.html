@@ -1,0 +1,17 @@
+<mat-card>
+  <div class="row">
+    <div class="col-2 text-center">
+      <img
+        class="match-card-component__champion_icon"
+        src="{{ championIconUrl }}"
+      />
+    </div>
+    <div class="col-8 match-card-component__description">
+      <p>{{ championName }}</p>
+      <p>{{ matchData.lane }}</p>
+    </div>
+    <div class="col-2 match-card-component__description">
+      <p>{{ matchDate }}</p>
+    </div>
+  </div>
+</mat-card>

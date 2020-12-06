@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-2 text-center">
-    <img class="profile-component__icon" src="http://ddragon.leagueoflegends.com/cdn/10.23.1/img/profileicon/{{this.profile.profileIconId}}.png" />
+    <img class="profile-component__icon" src="{{iconUrl}}" />
   </div>
   <div class="col-10">
-    <h1>{{this.profile.name}}</h1>
-    <p>Lv. {{this.profile.summonerLevel}}</p>
+    <h1>{{profile.name}}</h1>
+    <p>Lv. {{profile.summonerLevel}}</p>
   </div>
 </div>
 <mat-tab-group>
-  <mat-tab label="Match History"><app-match-history></app-match-history></mat-tab>
+  <mat-tab label="Match History"><app-match-history [accountId]="profile.accountId"></app-match-history></mat-tab>
   <mat-tab label="Champion Stats"></mat-tab>
 </mat-tab-group>

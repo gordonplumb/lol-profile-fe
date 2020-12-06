@@ -1,3 +1,4 @@
+import { environment } from '../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,27 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
   profile: any;
-  name: string;
-  level: number;
-  iconId: number;
+  iconUrl: string;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // this.route.params.subscribe(params => {
-    //   this.getProfile(params.name);
-    // });
     this.profile = this.route.snapshot.data.profileResolver;
+    this.iconUrl = environment.assetBaseUrl + environment.version + '/img/profileicon/' + this.profile.profileIconId + '.png';
     console.log(this.profile);
   }
-
-  // getProfile(name: string): void {
-  //   this.profileService.getProfile(name).subscribe(profile => {
-  //     this.name = profile.name;
-  //     this.level = profile.summonerLevel;
-  //     this.iconId = profile.profileIconId;
-  //     console.log(profile);
-  //   });
-  // }
-
 }

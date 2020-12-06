@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiBaseUrl: 'http://localhost:8080/api',
+  assetBaseUrl: 'http://ddragon.leagueoflegends.com/cdn/',
+  version: '10.24.1'
 };
 
 /*

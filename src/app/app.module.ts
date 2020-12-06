@@ -11,9 +11,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './search/search.component';
 import { MatchHistoryComponent } from './profile/match-history/match-history.component';
+import { MatchCardComponent } from './profile/match-history/match-card/match-card.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { MatchHistoryComponent } from './profile/match-history/match-history.com
     ProfileComponent,
     SearchComponent,
     MatchHistoryComponent,
+    MatchCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,8 @@ import { MatchHistoryComponent } from './profile/match-history/match-history.com
     MatInputModule,
     MatButtonModule,
     MatTabsModule,
+    MatCardModule,
+    MatPaginatorModule,
     NgbModule
   ],
   providers: [],
