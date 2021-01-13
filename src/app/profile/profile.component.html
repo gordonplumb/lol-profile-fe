@@ -2,9 +2,12 @@
   <div class="col-2 text-center">
     <img class="profile-component__icon" src="{{iconUrl}}" />
   </div>
-  <div class="col-10">
-    <h1>{{profile.name}}</h1>
+  <div class="col-8 profile-component__details">
     <p>Lv. {{profile.summonerLevel}}</p>
+    <h1>{{profile.name}}</h1>
+  </div>
+  <div class="col-2 profile-component__details">
+    <button mat-raised-button color="primary" (click)="onClick()">Update</button>
   </div>
 </div>
 <mat-tab-group>

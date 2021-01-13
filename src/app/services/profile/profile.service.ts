@@ -17,6 +17,12 @@ export class ProfileService {
     return this.http.get(this.baseUrl + '/account', { params });
   }
 
+  updateProfile(name: string): Observable<any> {
+    let params = new HttpParams();
+    params = params.append('name', name);
+    return this.http.get(this.baseUrl + '/updateAccount', { params });
+  }
+
   getMatches(accountId: string, page: number, size: number): Observable<any> {
     let params = new HttpParams();
     params = params.append('accountId', accountId);
