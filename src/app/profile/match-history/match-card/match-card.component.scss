@@ -1,11 +1,50 @@
+.match-card-component {
+  border-left: 5px solid red;
+}
+
+.match-card-component--win {
+  border-color: green;
+}
+
 .match-card-component__champion_icon {
   width: 75px;
 }
 
-.match-card-component__description {
-  margin: auto 0;
+.match-card-component_spells {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.match-card-component_spell-icon {
+  width: 25px;
+  padding: 1px;
+}
+
+.match-card-component__description  > p {
+  margin: 0;
+}
+
+.match-card-component__items {
+  display: flex;
+  padding: 20px;
+}
+
+.match-card-component__timestamp {
+  padding: 25px;
 
   > p {
     margin: 0;
   }
+}
+
+.match-card-component__image-icon {
+  width: 40px;
+}
+
+.match-card-component__no-item {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  background-color: #303030;
+  margin: 1px;
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { MatchShortDetails } from 'src/app/common/model';
 import { ProfileService } from 'src/app/services/profile/profile.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class MatchHistoryComponent implements OnInit {
   length = 100;
   pageSize = 10;
   pageSizeOptions = [10, 25, 50, 100];
-  data: any[];
+  data: MatchShortDetails[];
   count = 0;
 
   @Input()

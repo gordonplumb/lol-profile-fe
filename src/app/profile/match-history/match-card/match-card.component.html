@@ -1,16 +1,28 @@
-<mat-card>
+<mat-card class="match-card-component" [ngClass]="{'match-card-component--win': matchData.win}">
   <div class="row">
     <div class="col-2 text-center">
       <img
         class="match-card-component__champion_icon"
         src="{{ championIconUrl }}"
       />
+      <span class="match-card-component_spells">
+        <img class="match-card-component_spell-icon" src="{{ spell1IconUrl }}"/>
+        <img class="match-card-component_spell-icon" src="{{ spell2IconUrl }}"/>
+      </span>
     </div>
-    <div class="col-8 match-card-component__description">
+    <div class="match-card-component__description">
       <p>{{ championName }}</p>
-      <p>{{ matchData.lane }}</p>
+      <p>KDA: {{ matchData.kills }}/{{ matchData.deaths }}/{{ matchData.assists}}</p>
+      <p>Gold: {{ matchData.gold }}</p>
+      <p>CS: {{ matchData.totalMinionsKilled }}</p>
     </div>
-    <div class="col-2 match-card-component__description">
+    <div class="col-6">
+      <div class="match-card-component__items">
+        <img *ngFor="let itemUrl of itemUrls" class="match-card-component__image-icon" src="{{ itemUrl }}"/>
+        <div *ngFor="let noItem of noItems" class="match-card-component__no-item"></div>
+      </div>
+    </div>
+    <div class="col-2 match-card-component__timestamp">
       <p>{{ matchDate }}</p>
     </div>
   </div>

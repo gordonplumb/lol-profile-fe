@@ -4,6 +4,18 @@ export interface ChampionDetails {
 }
 
 export class GlobalConstants {
+  public static spells: Record<number, string> = {
+    21: 'SummonerBarrier',
+    1: 'SummonerBoost',
+    14: 'SummonerDot',
+    3: 'SummonerExhaust',
+    4: 'SummonerFlash',
+    6: 'SummonerHaste',
+    7: 'SummonerHeal',
+    11: 'SummonerSmite',
+    12: 'SummonerTeleport'
+  };
+
   public static champions: Record<number, ChampionDetails> = {
     266: {
       id: 'Aatrox',
