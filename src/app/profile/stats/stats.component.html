@@ -1,0 +1,56 @@
+<div>
+  <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+    <div class="row stats-component__filter">
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Champion</mat-label>
+          <mat-select formControlName="championControl">
+            <mat-option [value]="-1">All</mat-option>
+            <mat-option *ngFor="let champion of champions" [value]="champion">
+              {{ champion[1].name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Queue</mat-label>
+          <mat-select formControlName="queueControl" multiple>
+            <mat-option *ngFor="let queue of queues" [value]="queue[0]">
+              {{ queue[1] }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="roleControl" multiple>
+            <mat-option *ngFor="let role of roles" [value]="role[0]">{{ role[1] }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 stats-component__filter-button">
+        <button mat-flat-button type="submit" color="primary">Filter</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div *ngIf="stats">
+  <mat-card>
+    <div class="row">
+      <div class="col-3">
+        <p>{{ stats.gamesPlayed }} games ({{ stats.winRate * 100 }}%)</p>
+        <mat-progress-bar
+          class="stats-component__winrate-bar"
+          mode="determinate"
+          value="{{ stats.winRate * 100 }}"
+        ></mat-progress-bar>
+      </div>
+      <div class="col-9">
+        <p>KDA: {{ (stats.kills + stats.assists) / stats.deaths }} </p>
+        <p>{{ stats.kills }}/{{ stats.deaths }}/{{ stats.assists }}</p>
+      </div>
+    </div>
+  </mat-card>
+</div>

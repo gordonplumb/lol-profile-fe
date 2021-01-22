@@ -33,7 +33,7 @@ export class MatchCardComponent implements OnInit {
     this.spell2IconUrl = environment.assetBaseUrl + environment.version + '/img/spell/' + spell2Name + '.png';
     this.championName = championDetails.name;
     const date = new Date(this.matchData.timestamp);
-    this.matchDate = date.getFullYear() + '/' + date.getMonth() + '/' + date.getDate();
+    this.matchDate = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate();
 
     this.itemUrls = [];
     this.noItems = [];

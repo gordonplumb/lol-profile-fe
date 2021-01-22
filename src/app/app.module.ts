@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './search/search.component';
 import { MatchHistoryComponent } from './profile/match-history/match-history.component';
 import { MatchCardComponent } from './profile/match-history/match-card/match-card.component';
+import { StatsComponent } from './profile/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,7 @@ import { MatchCardComponent } from './profile/match-history/match-card/match-car
     SearchComponent,
     MatchHistoryComponent,
     MatchCardComponent,
+    StatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,12 +37,16 @@ import { MatchCardComponent } from './profile/match-history/match-card/match-car
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
     MatTabsModule,
     MatCardModule,
+    MatAutocompleteModule,
     MatPaginatorModule,
+    MatProgressBarModule,
     NgbModule
   ],
   providers: [],

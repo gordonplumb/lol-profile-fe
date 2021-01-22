@@ -30,4 +30,13 @@ export class ProfileService {
     params = params.append('size', size.toString());
     return this.http.get(this.baseUrl + '/matches', { params });
   }
+
+  getStats(accountId: string, champion: number, queues: number[], roles: string[]): Observable<any> {
+    let params = new HttpParams();
+    params = params.append('accountId', accountId);
+    params = params.append('champion', champion.toString());
+    params = params.append('queues', queues.toString());
+    params = params.append('roles', roles.toString());
+    return this.http.get(this.baseUrl + '/stats', { params });
+  }
 }

@@ -10,11 +10,20 @@ export class GameDataService {
 
   constructor() { }
 
-  getChampionDetails(key: number): ChampionDetails{
-    return this.champions[key];
+  getChampionDetails(key: number): ChampionDetails {
+    return this.champions.get(key);
+  }
+
+  getChampionsAsArray(): Array<[number, ChampionDetails]> {
+    const championArray = new Array();
+    for (const iterator of this.champions.entries()) {
+      championArray.push(iterator);
+    }
+
+    return championArray;
   }
 
   getSummonerSpellName(key: number): string {
-    return this.spells[key];
+    return this.spells.get(key);
   }
 }
