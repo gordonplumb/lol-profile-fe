@@ -18,5 +18,7 @@ export interface MatchShortDetails {
   win: boolean;
   role: string;
   timestamp: number;
+  gameDuration: number;
   queue: number;
+  gameVersion: string;
 }
