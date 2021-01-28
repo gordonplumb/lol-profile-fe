@@ -17,3 +17,21 @@
     }
   }
 }
+
+.stats-component__win-chart {
+  text-align: center;
+}
+
+.stats-component__main-stats {
+  margin: auto 20px;
+}
+
+.stats-component__multikill {
+  height: 325px;
+
+  ::ng-deep .ngx-charts {
+    text {
+      fill: white;
+    }
+  }
+}

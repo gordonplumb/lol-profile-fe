@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SearchComponent } from './search/search.component';
 import { MatchHistoryComponent } from './profile/match-history/match-history.component';
 import { MatchCardComponent } from './profile/match-history/match-card/match-card.component';
@@ -47,7 +48,8 @@ import { StatsComponent } from './profile/stats/stats.component';
     MatAutocompleteModule,
     MatPaginatorModule,
     MatProgressBarModule,
-    NgbModule
+    NgbModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

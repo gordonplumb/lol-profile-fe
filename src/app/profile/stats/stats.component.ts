@@ -45,6 +45,17 @@ export class StatsComponent implements OnInit {
 
   stats: any;
 
+  // win chart
+  winChartView: any[] = [150, 150];
+  winChartResults: any[];
+  winChartColourScheme = {
+    domain: ['green', 'red']
+  };
+
+  // multikill chart
+  multiKillChartView: any[] = [400, 250];
+  multikillChartResults: any[];
+
   constructor(private gameDataService: GameDataService, private profileService: ProfileService) { }
 
   ngOnInit(): void {
@@ -53,7 +64,6 @@ export class StatsComponent implements OnInit {
     this.filterForm.get('championControl').setValue(-1);
     this.filterForm.get('queueControl').setValue(this.queueList);
     this.filterForm.get('roleControl').setValue(this.roleList);
-    this.onSubmit();
   }
 
   onSubmit(): void {
@@ -78,6 +88,16 @@ export class StatsComponent implements OnInit {
     this.profileService.getStats(this.accountId, champion, queues, roles).subscribe(result => {
       console.log(result);
       this.stats = result;
+      this.winChartResults = [
+        { name: 'Win', value: this.stats.wins },
+        { name: 'Loss', value: this.stats.gamesPlayed - this.stats.wins }
+      ];
+      this.multikillChartResults = [
+        { name: 'Double Kill', value: this.stats.doubleKills },
+        { name: 'Triple Kill', value: this.stats.tripleKills },
+        { name: 'Quadra Kill', value: this.stats.quadraKills },
+        { name: 'Penta Kill', value: this.stats.pentaKills }
+      ]
     });
   }
 

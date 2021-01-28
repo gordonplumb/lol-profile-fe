@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~11.0.2",
     "@angular/router": "~11.0.2",
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
+    "@swimlane/ngx-charts": "^17.0.0",
     "@types/angular": "^1.8.0",
     "bootstrap": "^4.5.3",
     "rxjs": "~6.6.0",
