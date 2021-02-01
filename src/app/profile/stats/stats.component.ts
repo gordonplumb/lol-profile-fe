@@ -85,7 +85,6 @@ export class StatsComponent implements OnInit {
     }
 
     this.profileService.getStats(this.accountId, champion, queues, roles).subscribe(result => {
-      console.log(result);
       this.stats = result;
       if (result.gamesPlayed > 0) {
         this.winChartResults = [

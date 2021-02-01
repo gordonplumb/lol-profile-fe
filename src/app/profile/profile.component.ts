@@ -35,6 +35,5 @@ export class ProfileComponent implements OnInit {
   loadProfile(profile: any): void {
     this.profile = profile;
     this.iconUrl = environment.assetBaseUrl + environment.version + '/img/profileicon/' + this.profile.profileIconId + '.png';
-    console.log(this.profile);
   }
 }

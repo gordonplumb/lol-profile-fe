@@ -30,7 +30,6 @@ export class MatchHistoryComponent implements OnInit {
 
   getData(event: PageEvent): PageEvent {
     this.profileService.getMatches(this.accountId, event.pageIndex, event.pageSize).subscribe((result) => {
-      console.log(result);
       this.data = result.content;
       this.length = result.totalElements;
     });
