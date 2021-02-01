@@ -26,11 +26,12 @@
 
 .match-card-component__items {
   display: flex;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .match-card-component__timestamp {
-  padding: 25px;
+  padding: 25px 0;
+  text-align: center;
 
   > p {
     margin: 0;

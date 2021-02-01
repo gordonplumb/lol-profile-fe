@@ -10,7 +10,7 @@ import { ProfileService } from 'src/app/services/profile/profile.service';
 })
 export class MatchHistoryComponent implements OnInit {
   pageEvent: PageEvent;
-  length = 100;
+  length = 0;
   pageSize = 10;
   pageSizeOptions = [10, 25, 50, 100];
   data: MatchShortDetails[];
@@ -31,7 +31,8 @@ export class MatchHistoryComponent implements OnInit {
   getData(event: PageEvent): PageEvent {
     this.profileService.getMatches(this.accountId, event.pageIndex, event.pageSize).subscribe((result) => {
       console.log(result);
-      this.data = result;
+      this.data = result.content;
+      this.length = result.totalElements;
     });
 
     return event;

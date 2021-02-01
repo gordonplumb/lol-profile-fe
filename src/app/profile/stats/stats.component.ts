@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import { ChampionDetails } from 'src/app/common/global.constants';
 import { GameDataService } from 'src/app/services/game-data/game-data.service';
 import { ProfileService } from 'src/app/services/profile/profile.service';
@@ -97,7 +95,7 @@ export class StatsComponent implements OnInit {
         { name: 'Triple Kill', value: this.stats.tripleKills },
         { name: 'Quadra Kill', value: this.stats.quadraKills },
         { name: 'Penta Kill', value: this.stats.pentaKills }
-      ]
+      ];
     });
   }
 
