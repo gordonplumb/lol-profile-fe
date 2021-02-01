@@ -42,6 +42,7 @@ export class StatsComponent implements OnInit {
   roleList = [0, 1, 2, 3, 4];
 
   stats: any;
+  gameDuration: string;
 
   // win chart
   winChartView: any[] = [150, 150];
@@ -86,16 +87,21 @@ export class StatsComponent implements OnInit {
     this.profileService.getStats(this.accountId, champion, queues, roles).subscribe(result => {
       console.log(result);
       this.stats = result;
-      this.winChartResults = [
-        { name: 'Win', value: this.stats.wins },
-        { name: 'Loss', value: this.stats.gamesPlayed - this.stats.wins }
-      ];
-      this.multikillChartResults = [
-        { name: 'Double Kill', value: this.stats.doubleKills },
-        { name: 'Triple Kill', value: this.stats.tripleKills },
-        { name: 'Quadra Kill', value: this.stats.quadraKills },
-        { name: 'Penta Kill', value: this.stats.pentaKills }
-      ];
+      if (result.gamesPlayed > 0) {
+        this.winChartResults = [
+          { name: 'Win', value: this.stats.wins },
+          { name: 'Loss', value: this.stats.gamesPlayed - this.stats.wins }
+        ];
+        this.multikillChartResults = [
+          { name: 'Double Kill', value: this.stats.doubleKills },
+          { name: 'Triple Kill', value: this.stats.tripleKills },
+          { name: 'Quadra Kill', value: this.stats.quadraKills },
+          { name: 'Penta Kill', value: this.stats.pentaKills }
+        ];
+        const minutes = Math.floor(result.gameDuration / 60);
+        const seconds = result.gameDuration % 60;
+        this.gameDuration = minutes + ':' + (seconds < 10 ? '0' + seconds : seconds);
+      }
     });
   }
 

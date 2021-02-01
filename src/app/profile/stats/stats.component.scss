@@ -1,5 +1,14 @@
 .stats-component__filter {
+  display: flex;
   padding: 10px;
+
+  :not(:last-child) {
+    padding-right: 20px;
+  }
+
+  :last-child {
+    margin-left: auto;
+  }
 }
 
 .stats-component__filter-button {
@@ -22,8 +31,12 @@
   text-align: center;
 }
 
+.stats-component__game-stats {
+  display: inline-block;
+}
+
 .stats-component__main-stats {
-  margin: auto 20px;
+  margin: auto 0;
 }
 
 .stats-component__multikill {

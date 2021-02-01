@@ -1,16 +1,22 @@
 <div class="row">
-  <div class="col-3 col-md-2 text-center">
-    <img class="profile-component__icon" src="{{iconUrl}}" />
-  </div>
-  <div class="col-6 col-md-8 profile-component__details">
-    <p>Lv. {{profile.summonerLevel}}</p>
-    <h1>{{profile.name}}</h1>
-  </div>
-  <div class="col-3 col-md-2  profile-component__details">
-    <button mat-raised-button color="primary" (click)="onClick()">Update</button>
+  <div class="col-lg-1 col-xl-2"></div>
+  <div class="col-lg-10 col-xl-8">
+    <div class="row">
+      <div class="col-3 col-md-2 text-center">
+        <img class="profile-component__icon" src="{{iconUrl}}" />
+      </div>
+      <div class="col-5 col-md-6 profile-component__details">
+        <p>Lv. {{profile.summonerLevel}}</p>
+        <h1>{{profile.name}}</h1>
+      </div>
+      <div class="col-4 profile-component__forms">
+        <app-search></app-search>
+        <button mat-raised-button color="primary" (click)="onClick()">Update</button>
+      </div>
+    </div>
+    <mat-tab-group>
+      <mat-tab label="Match History"><app-match-history [accountId]="profile.accountId"></app-match-history></mat-tab>
+      <mat-tab label="Stats"><app-stats [accountId]="profile.accountId"></app-stats></mat-tab>
+    </mat-tab-group>
   </div>
 </div>
-<mat-tab-group>
-  <mat-tab label="Match History"><app-match-history [accountId]="profile.accountId"></app-match-history></mat-tab>
-  <mat-tab label="Stats"><app-stats [accountId]="profile.accountId"></app-stats></mat-tab>
-</mat-tab-group>

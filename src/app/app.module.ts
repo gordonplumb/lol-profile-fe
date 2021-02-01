@@ -22,6 +22,7 @@ import { SearchComponent } from './search/search.component';
 import { MatchHistoryComponent } from './profile/match-history/match-history.component';
 import { MatchCardComponent } from './profile/match-history/match-card/match-card.component';
 import { StatsComponent } from './profile/stats/stats.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { StatsComponent } from './profile/stats/stats.component';
     MatchHistoryComponent,
     MatchCardComponent,
     StatsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

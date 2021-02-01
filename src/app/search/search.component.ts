@@ -10,7 +10,7 @@ export class SearchComponent {
 
   constructor(private router: Router) {}
 
-  onSubmit(name) {
+  onSubmit(name: string): void {
     this.router.navigate(['/profile', name]);
   }
 
