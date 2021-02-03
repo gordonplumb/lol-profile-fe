@@ -16,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SearchComponent } from './search/search.component';
@@ -50,6 +51,7 @@ import { HomeComponent } from './home/home.component';
     MatAutocompleteModule,
     MatPaginatorModule,
     MatProgressBarModule,
+    MatSnackBarModule,
     NgbModule,
     NgxChartsModule
   ],

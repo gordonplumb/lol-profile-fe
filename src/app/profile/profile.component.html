@@ -1,4 +1,5 @@
-<div class="row">
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<div class="row profile-component">
   <div class="col-lg-1 col-xl-2"></div>
   <div class="col-lg-10 col-xl-8">
     <div class="row">
@@ -11,7 +12,12 @@
       </div>
       <div class="col-4 profile-component__forms">
         <app-search></app-search>
-        <button mat-raised-button color="primary" (click)="onClick()">Update</button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onClick()"
+          [disabled]="loading"
+        >Update</button>
       </div>
     </div>
     <mat-tab-group>
