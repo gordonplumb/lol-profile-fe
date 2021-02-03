@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:8080/api',
   assetBaseUrl: 'http://ddragon.leagueoflegends.com/cdn/',
-  version: '11.1.1'
+  version: '11.3.1'
 };
 
 /*

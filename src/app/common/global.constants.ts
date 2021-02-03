@@ -112,6 +112,7 @@ export class GlobalConstants {
     [497, { id: 'Rakan', name: 'Rakan' }],
     [33, { id: 'Rammus', name: 'Rammus' }],
     [421, { id: 'RekSai', name: 'Rek\'Sai' }],
+    [526, { id: 'Rell', name: 'Rell' }],
     [58, { id: 'Renekton', name: 'Renekton' }],
     [107, { id: 'Rengar', name: 'Rengar' }],
     [92, { id: 'Riven', name: 'Riven' }],
