@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { finalize, skip } from 'rxjs/operators';
+import { finalize } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { ProfileService } from '../services/profile/profile.service';
 
@@ -20,16 +20,10 @@ export class ProfileComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private profileService: ProfileService,
-    private snackBar: MatSnackBar) {}
+    private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
-    this.route.params.pipe(skip(1)).subscribe(params => {
-      this.profileService.getProfile(params.name).subscribe(profile => {
-        this.loadProfile(profile);
-        window.location.reload();
-      });
-    });
-    this.loadProfile(this.route.snapshot.data.profileResolver);
+    this.route.params.subscribe(() => this.loadProfile(this.route.snapshot.data.profileResolver));
   }
 
   onClick(): void {
@@ -58,6 +52,6 @@ export class ProfileComponent implements OnInit {
   }
 
   openSnackBar(message: string, action: string): void {
-    this.snackBar.open(message, action, { duration: 5000 });
+    this._snackBar.open(message, action, { duration: 5000 });
   }
 }

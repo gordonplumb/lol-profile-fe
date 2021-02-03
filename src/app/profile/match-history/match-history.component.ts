@@ -16,8 +16,19 @@ export class MatchHistoryComponent implements OnInit {
   data: MatchShortDetails[];
   count = 0;
 
+  private _accountId: string;
+
   @Input()
-  accountId: string;
+  set accountId(value: string) {
+    this._accountId = value;
+    this.profileService.getMatches(this._accountId, 0, 10).subscribe((result) => {
+      this.data = result.content;
+      this.length = result.totalElements;
+    });
+  }
+  get accountId(): string {
+    return this._accountId;
+  }
 
   constructor(private profileService: ProfileService) { }
 
