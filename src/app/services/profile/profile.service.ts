@@ -12,31 +12,28 @@ export class ProfileService {
   constructor(private http: HttpClient) { }
 
   getProfile(name: string): Observable<any> {
-    let params = new HttpParams();
-    params = params.append('name', name);
+    const params = new HttpParams().append('name', name);
     return this.http.get(this.baseUrl + '/account', { params });
   }
 
   updateProfile(name: string): Observable<any> {
-    let params = new HttpParams();
-    params = params.append('name', name);
-    return this.http.get(this.baseUrl + '/updateAccount', { params });
+    return this.http.post(this.baseUrl + '/updateAccount', name);
   }
 
   getMatches(accountId: string, page: number, size: number): Observable<any> {
-    let params = new HttpParams();
-    params = params.append('accountId', accountId);
-    params = params.append('page', page.toString());
-    params = params.append('size', size.toString());
+    const params = new HttpParams()
+      .append('accountId', accountId)
+      .append('page', page.toString())
+      .append('size', size.toString());
     return this.http.get(this.baseUrl + '/matches', { params });
   }
 
   getStats(accountId: string, champion: number, queues: number[], roles: string[]): Observable<any> {
-    let params = new HttpParams();
-    params = params.append('accountId', accountId);
-    params = params.append('champion', champion.toString());
-    params = params.append('queues', queues.toString());
-    params = params.append('roles', roles.toString());
+    const params = new HttpParams()
+      .append('accountId', accountId)
+      .append('champion', champion.toString())
+      .append('queues', queues.toString())
+      .append('roles', roles.toString());
     return this.http.get(this.baseUrl + '/stats', { params });
   }
 }
